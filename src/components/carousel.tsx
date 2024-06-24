@@ -30,7 +30,7 @@ const CarouselSlide = () => {
       <div className="relative h-full w-full">
         <Image src={slide3} alt="slide3" className="h-screen w-screen object-cover" />
         <div className="absolute inset-0 flex items-center justify-center text-white text-4xl">
-          <span>Text Overlay 2</span>
+          <span>HILLSIDE NETBALL TEAM</span>
         </div>
       </div>
     </CarouselItem>
