@@ -5,7 +5,17 @@ import slide2 from "@/components/images/slide2.jpg"
 import slide3 from "@/components/images/slide3.jpeg"
 import Image from 'next/image'
 import { Button } from "@/components/ui/button";
-import Navbar from "@/components/navbar"
+import Navbar from "@/components/navbar";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label"
+
 
 export default function Home() {
   return (
@@ -13,16 +23,16 @@ export default function Home() {
     <Navbar />
     <CarouselSlide />
     <section className="flex my-8 mx-4 items-center lg:container">
-      <div className="bg-[#16602a] w-[20%] py-5 text-sm flex-nowrap text-center text-white"><h1>SCHOOL UPDATES</h1></div>
+      <div className="bg-[#16602a] w-[20%] py-5 text-[10px] sm:text-sm flex-nowrap text-center text-white"><h1>SCHOOL UPDATES</h1></div>
       <div className="w-[80%]">
-      <p className="bg-[#f50000] py-2 text-white">
+      <p className="bg-[#f50000] text-[10px] sm:text-sm py-2 text-white">
         REPORTING DATES FOR TERM 2 2024: P.7 - Friday, 24.05.2024 | P.6 - 
       </p>
       </div>
     </section>
     <section className="my-8 py-4 mx-4 flex flex-col sm:flex-row lg:container gap-10">
    
-      <div className="py-4 mb-8 ">
+      <div className="py-4 mb-8 flex-1 ">
         <h1 className="text-4xl py-4">
         Hillside Nursery & Primary Schools Naalya
         </h1>
@@ -40,15 +50,26 @@ export default function Home() {
         </p>
         <Button className="bg-[#16602a]  rounded-[50px] text-white hover:bg-[#1e232d]">MORE ABOUT US</Button>
       </div>
-      <div>
-        <div className="py-4">
-          <Image src={slide2} alt="slide2"  className="w-full h-400 rounded-[10px]" />
-        </div>
-        <div className="py-4">
-        <Image src={slide2} alt=""  className="w-full h-400 rounded-[10px]" />
-        </div>
+      <div className="flex-1 relative">
+  <div className="grid md:grid-rows-2 md:grid-flow-col md:relative flex-col md:flex-row">
+    <div className="row-start-1 row-span-2 md:order-none order-2">
+      <Image
+        src={slide2}
+        alt="slide2"
+        className="w-full h-[250px] md:-mr-[30px] mt-[150px] md:mt-[150px] rounded-[10px] relative z-10"
+      />
+    </div>
+    <div className="row-end-3 row-span-2 md:order-none order-1">
+      <Image
+        src={slide2}
+        alt="slide2"
+        className="w-full h-[250px] rounded-[10px] md:relative md:-mt-[10px] md:-ml-[30px] z-20"
+      />
+    </div>
+  </div>
+</div>
 
-      </div>
+
      
   
     </section>
@@ -57,6 +78,34 @@ export default function Home() {
       <div className="">
         <h1 className="text-4xl py-4">Explore more</h1>
         <p className="text-sm mx-auto py-4 text-gray-600">We believe in providing each student with a comprehensive and well-balanced education which takes cognizance of their physical, intellectual, social and emotional development.</p>
+      </div>
+      <div>
+      <Card className="w-full bg-white rounded-[10px] my-8 py-10 shadow-lg">
+      <CardContent>
+
+          <div className="grid w-full items-center gap-4 ">
+            <div className="flex flex-col  py-4 hover:text-[#16602a] ">
+              <Label className="text-2xl" htmlFor="name">School Requirements</Label>
+            </div>
+            <hr className="border-t border-gray-300"/>
+            <div className="flex flex-col py-4 hover:text-[#16602a]">
+              <Label className="text-2xl" htmlFor="name">Fees structure</Label>
+            </div>
+            <hr className="border-t border-gray-300"/>
+            <div className="flex flex-col py-4 hover:text-[#16602a]">
+              <Label className="text-2xl" htmlFor="name">School Facilities</Label>
+            </div>
+            <hr className="border-t border-gray-300"/>
+            <div className="flex flex-col py-4 hover:text-[#16602a]">
+              <Label className="text-2xl" htmlFor="name">Our Staff</Label>
+            </div>
+            <Button className="bg-[#16602a] hover:bg-[#16602a] w-full rounded-[10px] text-white">Contact Us</Button>
+        
+          </div>
+      
+      </CardContent>
+      
+    </Card>
       </div>
   
     </section>
@@ -81,10 +130,10 @@ export default function Home() {
                       <h2 className="mb-6 text-sm font-semibold text-white uppercase">School Location</h2>
                       <ul className="text-white font-medium">
                           <li className="mb-4">
-                              <a href="" className="hover:underline ">Github</a>
+                              <a href="" className="hover:underline ">map</a>
                           </li>
                           <li>
-                              <a href="" className="hover:underline">Discord</a>
+                              <a href="" className="hover:underline">map</a>
                           </li>
                       </ul>
                   </div>
@@ -149,3 +198,7 @@ export default function Home() {
    </main>
   );
 }
+
+
+
+
